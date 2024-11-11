@@ -1,0 +1,21 @@
+image: gitpod/workspace-full:2024-04-15-16-35-16
+
+tasks:
+  - name: create git hooks
+    init: bash ./pre-commit-script.sh
+  - name: STARTING  DEV
+    init: |
+      npm i
+      npm run start
+
+ports:
+  - port: 3000
+    visibility: public
+
+  - port: 3001
+    visibility: public
+
+vscode:
+  extensions:
+    - mhutchie.git-graph
+    - eamodio.gitlens
